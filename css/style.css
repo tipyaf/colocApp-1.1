@@ -24,10 +24,13 @@ nav li {
     flex-direction: column;
     justify-content: center;
 
+
 }
 nav a:enabled{
     text-decoration: none;
     color: #D9A491;
+    border: none;
+
 }
 
 nav a{
@@ -41,6 +44,7 @@ nav a{
     text-align: center;
     text-decoration: none;
     color: #BF364F;
+    border: none;
 
 
 }
@@ -70,6 +74,11 @@ nav a:hover{
     -ms-transition: font-size 10s ease-out;
     -o-transition: font-size 10s ease-out;
     transition: font-size 10s ease-out;
+    box-shadow:10px 10px 30px #a3314a  inset;
+    -moz-box-shadow:10px 10px 30px #a3314a inset;
+    -webkit-box-shadow:10px 10px 30px #a3314a inset;
+
+
 }
 
 
@@ -178,4 +187,5 @@ nav a:hover{
 /*=======================Vue2 (tableau)========================*/
 .vue2 {
     max-height: 100vh;
+    /*border-left: 1px solid #F2F2F2;*/
 }

@@ -5,11 +5,9 @@ colocApp.config(['$routeProvider',
         $routeProvider.
         when('/vue1', {
             templateUrl: 'views/vue1.html',
-            // controller: 'coloCtrl'
         }).
         when('/vue2', {
             templateUrl: 'views/vue2.html',
-            // controller: 'coloCtrl'
         }).
         otherwise({
             redirectTo: '/index'
