@@ -1,0 +1,144 @@
+<div class="content-tab-form vue1">
+    <div class="coloc-form form">
+        <h2>Ajouter un colocataire</h2>
+        <form class="line"
+              ng-submit="addColoc(coloc)"
+              name="colocForm"
+              novalidate>
+
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-child"></i></div>
+
+                        <input class="form-control text-capitalize"
+                               type="text"
+                               name="colocName"
+                               placeholder="Nom du colocataire"
+                               ng-model="coloc.name"
+                               ng-required="true"
+                        >
+                    </div>
+                </div>
+                <button class="btn btn-primary"
+                        type="submit"
+                        name="button"
+                        ng-model="addcoloc"
+                        ng-disabled="colocForm.$invalid"
+                >Ajouter colocataire</button>
+
+            </div>
+
+        </form>
+        <div class="message coloc-msg animated fadeIn"
+             ng-show="colocForm.$submitted && colocForm.$valid"
+        ><span class="text-capitalize">{{coloc.name}}</span> a été ajouté(e).
+
+        </div>
+
+
+    </div>
+    <!-- add money -->
+    <div class="money-form form"
+         >
+        <h2>Ajouter des dépenses</h2>
+        <form class="line form-inline"
+              ng-submit="addMoney(selName,buy); addType(selName,type); total(colocIndex, buy)"
+              name="moneyForm"
+              novalidate>
+
+            <div class="form-group">
+                <label>Nom</label>
+                <select class="form-control text-capitalize"
+                        name="nameSelect"
+                        ng-model="selName"
+                        ng-required="true"
+                >
+                    <option ng-repeat="coloc in colocs"
+                            value="{{$index}}"
+                    >{{coloc.name}}
+
+                    </option>
+
+                </select>
+                <label>Type</label>
+
+                <select class="form-control text-capitalize"
+                        name="typeSelect"
+                        ng-options="item for item in types"
+                        ng-model="type"
+                        ng-required="true"
+                >
+                </select>
+
+
+                <div class="input-group">
+
+
+                    <input class="form-control"
+                           type="number"
+                           name="colocBuy"
+                           placeholder="Montant de la dépense"
+                           ng-model="buy"
+                           ng-pattern="/^[0-9]{1,7}$/"
+                           ng-required="true"
+                    >
+                    <div class="input-group-addon"><i class="fa fa-eur"></i></div>
+                </div>
+            </div>
+
+
+
+            <button class="btn btn-primary"
+                    type="submit"
+                    name="Moneybutton"
+                    ng-model="addcoloc"
+                    ng-disabled="moneyForm.$invalid"
+            >Ajouter dépense
+            </button>
+
+
+
+
+
+        </form>
+
+
+        <div class="message money-msg animated fadeIn"
+             ng-show="moneyForm.$submitted && moneyForm.$valid"
+        >La dépense de <span class="text-capitalize">{{coloc.name}}</span> d'un montant de {{buy}}€ a été ajoutée.
+
+        </div>
+    </div>
+    <div  class="add-type type-form form"
+          >
+
+        <h2>Type de dépense</h2>
+
+        <form class="form-inline"
+              name="addTypeForm"
+              ng-submit="addNewType(typeMe); divHide=false"
+        >
+
+            <input class="form-control"
+                   type="text"
+                   name="typeAddInput"
+                   placeholder="Déco, mobilier..."
+                   ng-model="typeMe"
+                   ng-required="true"
+            >
+            <button class="btn btn-warning"
+                    type="submit"
+                    name="typeAddButton"
+                    ng-disabled="addTypeForm.$invalid"
+            >Ajouter nouveau type de dépense
+            </button>
+            <div class="message type-msg animated fadeIn"
+                 ng-show="addTypeForm.$submitted && addTypeForm.$valid"
+            >Le type de dépense ("<span class="text-capitalize">{{typeMe}}</span>") a été ajouté.
+
+            </div>
+        </form>
+
+    </div>
+    </div>

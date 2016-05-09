@@ -1,0 +1,173 @@
+body{
+    max-width: 2000px;
+    /*margin: auto;*/
+    /*text-align: center;*/
+    background-color: #F1C40F;
+}
+nav{
+    width: 100%;
+    height: 100px;
+}
+
+nav ul{
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+
+}
+nav li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+nav a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ABC9C;
+    text-align: center;
+    text-decoration: none;
+
+}
+nav a:hover{
+    background-color: #E74C3C;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+/*nav a:active, nav a:visited{*/
+    /*font-size: 18px;*/
+    /*color: black;*/
+    /*background-color: inherit;*/
+/*}*/
+
+.active{
+    background-color: #E74C3C;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    -webkit-transition: font-size 10s ease-out;
+    -moz-transition: font-size 10s ease-out;
+    -ms-transition: font-size 10s ease-out;
+    -o-transition: font-size 10s ease-out;
+    transition: font-size 10s ease-out;
+}
+
+
+.view-animate-container {
+    position:relative;
+    height:100px!important;
+    background:white;
+    /*border:1px solid #2d59ff;*/
+    /*height:40px;*/
+    overflow:hidden;
+}
+
+.view-animate {
+    /*padding:10px;*/
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+
+    display:block;
+    width:100%;
+    /*border-left:1px solid #2d59ff;*/
+
+    position:absolute;
+    top:100px;
+    left:0;
+    right:0;
+    bottom:0;
+    /*padding:10px;*/
+}
+
+.view-animate.ng-enter {
+    left:100%;
+    top:100px;
+}
+.view-animate.ng-enter.ng-enter-active {
+    left:0;
+    top:100px;
+}
+.view-animate.ng-leave.ng-leave-active {
+    left:-100%;
+    top:100px;
+}
+/*.view-animate-reverse.ng-enter {*/
+    /*right:100%;*/
+    /*top:100px;*/
+    /*!*background-color: blueviolet;*!*/
+/*}*/
+/*.view-animate-reverse.ng-enter.ng-enter-active {*/
+    /*right:0;*/
+    /*top:100px;*/
+/*}*/
+/*.view-animate-reverse.ng-leave.ng-leave-active {*/
+    /*right:-100%;*/
+    /*top:100px;*/
+/*}*/
+
+.text-capitalize{
+    text-transform: capitalize;
+}
+
+/*=======================Vue1 (Ajout d'entrées)========================*/
+.vue1{
+    height: 100vh;
+    text-align: center;
+}
+.form{
+    min-height: 180px;
+    margin-top: auto;
+    padding: 10px;
+    /*border-radius: 5px;*/
+    color: white;
+    font-weight:lighter;
+}
+.form h2{
+    font-weight:lighter;
+
+}
+.form select{
+    min-width: 200px;
+    max-width: 200px;
+}
+.message{
+    margin-top: 8px;
+}
+.message.ng-enter {
+    animation: fadeIn 1s;
+}
+
+.message.ng-leave {
+    animation: fadeOut 1s;
+}
+    /*=======colocForm (ajout colocs)=======*/
+    .coloc-form{
+        background-color:#E74C3C;
+    }
+    /*=======moneyForm (ajout depenses)=======*/
+    .money-form{
+        background-color: #F1C40F ;
+    }
+    /*=======typeForm (ajout types de depenses)=======*/
+    .type-form{
+        background-color: #3498DB ;
+    }
+/*=======================Vue2 (tableau)========================*/
+.vue2 {
+    max-height: 100vh;
+}

@@ -1,0 +1,39 @@
+<div class="table-responsive slide-right vue2">
+
+
+    <h2>Tableau des dépenses</h2>
+    <hr>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Type de dépense</th>
+            <th>Dépenses</th>
+            <th>Total dépenses</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr ng-repeat="colox in colocs track by $index" class="success">
+            <td class="text-capitalize bigger">{{colox.name}}</td>
+            <td>
+                <ul>
+                    <li class="text-capitalize"
+                        ng-repeat="typ in colox.type track by $index">
+                        {{typ}}
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li class="text-capitalize slide-left"
+                        ng-repeat="dep in colox.buy track by $index">
+                        {{dep}}€
+                    </li>
+                </ul>
+            </td>
+            <td class="bigger">{{totalDepense($index)}}€</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
