@@ -77,68 +77,41 @@ nav a:hover{
     box-shadow:10px 10px 30px #a3314a  inset;
     -moz-box-shadow:10px 10px 30px #a3314a inset;
     -webkit-box-shadow:10px 10px 30px #a3314a inset;
-
-
-}
-
-
-.view-animate-container {
-    position:relative;
-    height:100px!important;
-    background:#F2CF66;
-    /*border:1px solid #2d59ff;*/
-    /*height:40px;*/
-    overflow:hidden;
-}
-
-.view-animate {
-    /*padding:10px;*/
 }
 
 .view-animate.ng-enter, .view-animate.ng-leave {
     transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-
     display:block;
     width:100%;
-    /*border-left:1px solid #2d59ff;*/
-
     position:absolute;
     top:100px;
     left:0;
     right:0;
     bottom:0;
-    /*padding:10px;*/
 }
 
-.view-animate.ng-enter {
-    left:100%;
+.animated.ng-enter, .animated.ng-leave{
+    animation-duration:1s;
+    animation-fill-mode:both;
+    display:block;
+    position:absolute;
     top:100px;
-}
-.view-animate.ng-enter.ng-enter-active {
     left:0;
-    top:100px;
+    right:0;
+    bottom:0;
+
+
 }
-.view-animate.ng-leave.ng-leave-active {
-    left:-100%;
-    top:100px;
-}
-/*.view-animate-reverse.ng-enter {*/
-    /*right:100%;*/
-    /*top:100px;*/
-    /*!*background-color: blueviolet;*!*/
-/*}*/
-/*.view-animate-reverse.ng-enter.ng-enter-active {*/
-    /*right:0;*/
-    /*top:100px;*/
-/*}*/
-/*.view-animate-reverse.ng-leave.ng-leave-active {*/
-    /*right:-100%;*/
-    /*top:100px;*/
-/*}*/
+.left.ng-enter{ animation-name: slideInLeft; }
+.left.ng-leave{ animation-name: slideOutLeft }
+.right.ng-enter{ animation-name: slideInRight; }
+.right.ng-leave{ animation-name: slideOutRight; }
 
 .text-capitalize{
     text-transform: capitalize;
 }
+
+
 
 /*=======================Vue1 (Ajout d'entrées)========================*/
 .vue1{

@@ -17,7 +17,7 @@ colocApp.config(['$routeProvider',
 
 
 
-colocApp.controller('coloCtrl', ['$scope', function($scope,$route,$window,$timeout){
+colocApp.controller('coloCtrl', ['$scope', function($scope,$route,$timeout){
     
 
     $scope.colocs=[];
@@ -69,22 +69,27 @@ colocApp.controller('coloCtrl', ['$scope', function($scope,$route,$window,$timeo
         return somme;
 
     };
-var newEnterBtn = document.getElementById('newEnter');
-var newMoneyBtn = document.getElementById('newMoney');
 
-    wrapLeft = function () {
-        $scope.animate = "view-animate"
-        // wrapRight()
-    };
+    var newEnterBtn = document.getElementById('newEnter');
+    var newMoneyBtn = document.getElementById('newMoney');
+
+    // $timeout(function () {
+    //     $scope.animate ='right'
+    // }, 1000)
+
     wrapRight = function () {
-        $scope.animate = "view-animate"
-        // wrapLeft();
-
+        $scope.animate = "left"
     }
+    wrapLeft = function () {
+        $scope.animate = "right"
+    };
 
     newEnterBtn.addEventListener('click', wrapRight);
     newMoneyBtn.addEventListener('click', wrapLeft);
-
     //  buy: parseInt($scope.buy));
 }]);
+
+
+
+
 
